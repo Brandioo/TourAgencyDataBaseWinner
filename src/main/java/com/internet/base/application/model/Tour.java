@@ -8,7 +8,6 @@ import java.util.Date;
 @Entity
 @Table(name = "tour")
 @NoArgsConstructor
-@Builder
 @Data
 public class Tour {
     @Id
@@ -34,7 +33,7 @@ public class Tour {
     @EqualsAndHashCode.Exclude
     @JoinColumn(name = "destinationId", insertable = false, updatable = false)
     private Destination destination;
-    private int destinationId;
+    private long destinationId;
 
 }
 

@@ -2,6 +2,8 @@ package com.internet.base.application.controller;
 
 import com.internet.base.application.model.Destination;
 import com.internet.base.application.service.DestinationService;
+import com.internet.base.application.service.Impl.SaveDestinationRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,9 +11,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/destinations")
 public class DestinationController {
-
 
     private DestinationService destinationService;
 
@@ -19,28 +20,27 @@ public class DestinationController {
         this.destinationService = destinationService;
     }
 
-    @PostMapping("/destinations")
-    public Destination addDestination(@RequestBody Destination destination) {
-        return destinationService.addDestination(destination);
+    @PostMapping
+    public long save(@RequestBody SaveDestinationRequest request) {
+        return destinationService.save(request);
     }
 
-    @GetMapping("/destinations")
-    public List<Destination> getDestination() {
-        return destinationService.getDestination();
+    @GetMapping
+    public List<Destination> getAll() {
+        return destinationService.getAll();
     }
 
-    @GetMapping("/destinations/{destinationID}")
-    public ResponseEntity<?> getDestinationById(@PathVariable Integer destinationID) {
-        return destinationService.getDestinationById(destinationID);
+    @GetMapping("/{id}")
+    public ResponseEntity<Destination> getDestinationById(@PathVariable long id) {
+        var result =  destinationService.getById(id);
+        if(result.isPresent()) {
+            return ResponseEntity.ok(result.get());
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/destinations/{destinationID}")
-    public ResponseEntity<?> updateDestination(@PathVariable Integer destinationID, @Valid @RequestBody Destination destinationRequest) {
-        return destinationService.updateDestination(destinationID, destinationRequest);
-    }
-
-    @DeleteMapping("/destinations/{destinationID}")
-    public ResponseEntity<?> deleteDestination(@PathVariable Integer destinationID) {
-        return destinationService.deleteDestination(destinationID);
+    @DeleteMapping("/{id}")
+    public void deleteDestination(@PathVariable long id) {
+        destinationService.delete(id);
     }
 }

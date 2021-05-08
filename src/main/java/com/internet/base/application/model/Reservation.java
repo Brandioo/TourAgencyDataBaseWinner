@@ -8,7 +8,6 @@ import java.util.Date;
 @Entity
 @Table(name = "reservation")
 @NoArgsConstructor
-@Builder
 @Data
 public class Reservation {
 

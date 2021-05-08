@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public interface TourService {
 
     public Tour addTour(Tour tours);

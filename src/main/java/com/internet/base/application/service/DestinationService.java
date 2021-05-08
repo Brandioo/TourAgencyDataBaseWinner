@@ -1,20 +1,16 @@
 package com.internet.base.application.service;
 
 import com.internet.base.application.model.Destination;
+import com.internet.base.application.service.Impl.SaveDestinationRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-@Service
 public interface DestinationService {
-    public Destination addDestination(Destination destination);
-
-    public List<Destination> getDestination();
-
-    public ResponseEntity<?> getDestinationById(Integer destinationID);
-
-    public ResponseEntity<?> updateDestination(Integer destinationID, Destination destinationRequest);
-
-    public ResponseEntity<?> deleteDestination(Integer destinationID);
+    long save(SaveDestinationRequest request);
+    List<Destination> getAll();
+    Optional<Destination> getById(long id);
+    void delete(long destinationId);
 }
