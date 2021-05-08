@@ -12,7 +12,7 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SaveUsersRequest {
+public class SaveClientsRequest {
     private long id;
     @NotEmpty
     private String name;

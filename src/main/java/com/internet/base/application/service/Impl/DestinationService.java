@@ -20,12 +20,12 @@ public class DestinationService {
 
     public ResponseEntity<?> addDestination(Destination destination) {
 
-        Destination destination1 = destinationRepository.findOne(destination.getDestinationID());
+        Destination destination1 = destinationRepository.findOne(destination.getId());
 
 
         Destination newDestination = new Destination();
 //            newDestination.setDeviceType(destination.getDeviceType());
-        newDestination.setDestinationID(destination.getDestinationID());
+        newDestination.setId(destination.getId());
         newDestination.setName(destination.getName());
 //        newDestination.setTour(destination.getTour());
         destinationRepository.save(newDestination);

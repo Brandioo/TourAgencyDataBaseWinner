@@ -19,13 +19,13 @@ public class TourService {
 
     public ResponseEntity<?> addTour(Tour tour) {
 
-        Tour tour1 = tourRepository.findOne(tour.getTourID());
+        Tour tour1 = tourRepository.findOne(tour.getId());
 
         if (tour1 != null) {
 
-            Long product_Quantity = tour1.getQuantity();
-            Long Quantity_To_be_Added = tour.getQuantity();
-            Long total = product_Quantity + Quantity_To_be_Added;
+            int product_Quantity = tour1.getQuantity();
+            int Quantity_To_be_Added = tour.getQuantity();
+            int total = product_Quantity + Quantity_To_be_Added;
 
             tour1.setQuantity(total);
 
@@ -37,7 +37,7 @@ public class TourService {
         } else {
             Tour newTour = new Tour();
 //            newTour.setDeviceType(tour.getDeviceType());
-            newTour.setTourID(tour.getTourID());
+            newTour.setId(tour.getId());
             newTour.setDays(tour.getDays());
             newTour.setDeparture(tour.getDeparture());
             newTour.setDescription(tour.getDescription());
