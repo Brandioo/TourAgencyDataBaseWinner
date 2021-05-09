@@ -1,9 +1,7 @@
 package com.internet.base.application.service;
 
 import com.internet.base.application.model.Destination;
-import com.internet.base.application.service.Impl.SaveDestinationRequest;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
+import com.internet.base.application.service.Impl.DestinationImpl.SaveDestinationRequest;
 
 import java.util.List;
 import java.util.Optional;

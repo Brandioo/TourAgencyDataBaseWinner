@@ -1,4 +1,4 @@
-package com.internet.base.application.service.Impl;
+package com.internet.base.application.service.Impl.DestinationImpl;
 
 import lombok.Data;
 

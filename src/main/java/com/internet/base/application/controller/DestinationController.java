@@ -2,12 +2,11 @@ package com.internet.base.application.controller;
 
 import com.internet.base.application.model.Destination;
 import com.internet.base.application.service.DestinationService;
-import com.internet.base.application.service.Impl.SaveDestinationRequest;
+import com.internet.base.application.service.Impl.DestinationImpl.SaveDestinationRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController

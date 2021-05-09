@@ -1,21 +1,14 @@
 package com.internet.base.application.service;
 
-import com.internet.base.application.model.Tour;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 
+import com.internet.base.application.model.Tour;
+import com.internet.base.application.service.Impl.TourImpl.SaveTourRequest;
 import java.util.List;
+import java.util.Optional;
 
 public interface TourService {
-
-    public Tour addTour(Tour tours);
-
-    public List<Tour> getTours();
-
-    public ResponseEntity<?> getTourById(Long tourID);
-
-    public ResponseEntity<?> updateTour(Long tourID, Tour tourRequest);
-
-    public ResponseEntity<?> deleteTour(Long tourID);
-
+    long save(SaveTourRequest request);
+    List<Tour> getAll();
+    Optional<Tour> getById(long id);
+    void delete(long tourId);
 }

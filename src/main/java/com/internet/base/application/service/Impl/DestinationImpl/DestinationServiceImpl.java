@@ -1,15 +1,10 @@
-package com.internet.base.application.service.Impl;
+package com.internet.base.application.service.Impl.DestinationImpl;
 
 import com.internet.base.application.model.Destination;
 import com.internet.base.application.repository.DestinationRepository;
 import com.internet.base.application.service.DestinationService;
-import com.internet.base.application.service.SaveClientsRequest;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import javax.validation.Valid;
 import java.util.*;
 
 @Service

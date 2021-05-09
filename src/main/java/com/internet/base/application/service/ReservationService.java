@@ -8,14 +8,14 @@ import java.util.List;
 
 public interface ReservationService {
 
-    public Reservation addReservation(Reservation reservation);
+    Reservation addReservation(Reservation reservation);
 
-    public List<Reservation> getReservation();
+    List<Reservation> getReservation();
 
-    public ResponseEntity<?> getReservationById(Long reservationID);
+    ResponseEntity<?> getReservationById(Long reservationID);
 
-    public ResponseEntity<?> updateReservation(Long reservationID, Reservation reservationRequest);
+    ResponseEntity<?> updateReservation(Long reservationID, Reservation reservationRequest);
 
-    public ResponseEntity<?> deleteReservation(Long reservationID);
+    ResponseEntity<?> deleteReservation(Long reservationID);
 
 }
